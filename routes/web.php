@@ -14,4 +14,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/', function() {
+    return view('index');
+});
+
+Route::resource('produtos', 'App\Http\Controllers\ControladorProduto');
+Route::get('categorias/apagar/{id}', 'App\Http\Controllers\ControladorCategoria@destroy');
+Route::resource('categorias', 'App\Http\Controllers\ControladorCategoria');
+
 
