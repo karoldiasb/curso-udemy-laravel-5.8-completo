@@ -14,17 +14,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('produtos', function() {
-    return view('outras.produtos');
-})->name('produtos');
+Route::get('/', function() {
+    return view('index');
+});
 
-Route::get('departamentos', function() {
-    return view('outras.departamentos');
-})->name('departamentos');
 
-Route::resource('clientes', ClienteControlador::class);
-
-Route::get('bootstrap', function() {
-    return view('outras.exemplo');
-})->name('exemplo-bootstrap');
 
