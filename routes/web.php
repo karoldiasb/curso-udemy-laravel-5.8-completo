@@ -28,3 +28,11 @@ Route::get('/departamentos', [App\Http\Controllers\DepartamentoController::class
 Route::get('/usuario', function () {
     return view('usuario');
 });
+
+// implementando multiusuario
+Route::get('/admin', [App\Http\Controllers\AdminController::class, 'index'])->name('admin.dashboard');
+
+Route::get('/admin/login', [App\Http\Controllers\Auth\AdminLoginController::class, 'index'])->name('admin.login');
+
+Route::post('/admin/login', [App\Http\Controllers\Auth\AdminLoginController::class, 'login'])->name('admin.login.submit');
+
