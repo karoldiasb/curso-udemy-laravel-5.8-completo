@@ -13,6 +13,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::resource('/', App\Http\Controllers\PostController::class);
+
+Route::get('/', [App\Http\Controllers\PostController::class, 'index']);
+Route::post('/', [App\Http\Controllers\PostController::class, 'store']);
+Route::delete('/{id}', [App\Http\Controllers\PostController::class, 'destroy']);
+Route::get('/download/{id}', [App\Http\Controllers\PostController::class, 'download']);
+
+
